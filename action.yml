@@ -22,7 +22,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.source }}
-    - ${{ inputs.destination }}
-    - ${{ inputs.database }}
-    - ${{ inputs.exclude }}
+    - ${{ inputs.source_uri }}
+    - ${{ inputs.destination_uri }}
+    - ${{ inputs.database_uri }}
+    - ${{ inputs.exclude_uri }}
