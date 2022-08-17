@@ -1,17 +1,28 @@
 # action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Mongo Tally'
+description: 'Sync databases and collections across clusters'
 author: 'Sharhan Alhassan'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  source: 
+    description: 'Source'
     required: true
-    default: 'World'
+  destination: 
+    description: 'Destination'
+    required: true
+  database:  
+    description: 'Database'
+    required: false
+  exclude:  
+    description: 'Collection'
+    required: false
 outputs:
-  time: # id of output
+  time:
     description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.source }}
+    - ${{ inputs.destination }}
+    - ${{ inputs.database }}
+    - ${{ inputs.exclude }}
