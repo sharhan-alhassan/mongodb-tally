@@ -1,11 +1,10 @@
 #!/bin/sh 
-source_cluster=$1
-destination_cluster=$2
-database=$3
-exclude_collection=$4
+SOURCE_CLUSTER=$1
+DESTINATION_CLUSTER=$2
+DATABASE=$3
+EXCLUDE_COLLECTION=$4
+TIME=$(date)
 
-mongodump --uri=${source_cluster}/${database} --excludeCollection=${exclude_collection} --archive | mongorestore --uri=${destination_cluster} --archive
+mongodump --uri=${SOURCE_CLUSTER}/${DATABASE} --excludeCollection=${EXCLUDE_COLLECTION} --archive | mongorestore --uri=${DESTINATION_CLUSTER} --archive
 
-# echo "Hello $1"
-# time=$(date)
-# echo "::set-output name=time::$time"
+echo "::set-output name=time::$TIME"

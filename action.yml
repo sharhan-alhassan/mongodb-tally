@@ -3,10 +3,10 @@ name: 'Mongo Tally'
 description: 'Sync databases and collections across clusters'
 author: 'Sharhan Alhassan'
 inputs:
-  source: 
+  source_uri: 
     description: 'Source'
     required: true
-  destination: 
+  destination_uri: 
     description: 'Destination'
     required: true
   database:  
@@ -17,7 +17,7 @@ inputs:
     required: false
 outputs:
   time:
-    description: 'The time we greeted you'
+    description: 'The time Job ended'
 runs:
   using: 'docker'
   image: 'Dockerfile'
