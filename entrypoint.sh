@@ -14,7 +14,7 @@ if [ $status_code -ne 0 ];
 then
   echo "Failed!...Error Code: ${status_code}"
   echo "Refer to Logs"
-  exit
+  exit ${status_code}
 else
   echo "Success!"
 fi
