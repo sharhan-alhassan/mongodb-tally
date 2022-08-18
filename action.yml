@@ -1,6 +1,6 @@
 # action.yml
-name: 'Mongo Tally'
-description: 'Sync databases and collections across clusters'
+name: 'Mongodb Tally'
+description: 'A Github Action to Sync databases and collections betwenn mongo clusters'
 author: 'Sharhan Alhassan'
 inputs:
   source: 
