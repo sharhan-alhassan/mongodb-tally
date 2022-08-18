@@ -57,3 +57,9 @@ Using github secrets to store the entire connection URI
 1. If you rollback entire database the first time without specifying any collection exemptions, any subsequent tallies will not override existing data 
 in the destination even if you specify collection exclusions
 ```
+
+# Troubleshooting 
+```yml
+1. If your connection URI has any some special characters like "?", you'll get the error # zsh: no matches found:
+You will have to escape the "?" with a backlash or quote the entire connection URI
+```

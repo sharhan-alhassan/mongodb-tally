@@ -16,7 +16,7 @@ then
   echo "Refer to Logs"
   exit ${status_code}
 else
-  echo "Success!"
+  echo "Rollback Successful!"
 fi
 
 echo "::set-output name=time::$TIME"
