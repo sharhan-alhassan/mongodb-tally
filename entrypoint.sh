@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash 
 
 SOURCE_CLUSTER=$1
 DESTINATION_CLUSTER=$2
