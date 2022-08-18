@@ -6,7 +6,7 @@ DATABASE=$3
 
 read -ra EXCLUDE_COLLECTION <<< "$4"
 
-mongodump --uri=${SOURCE_CLUSTER}/${DATABASE} "${EXCLUDE_COLLECTION[@]/#/--excludeCollection=}" --archive | mongorestore --uri=${DESTINATION_CLUSTER} --archive
+mongodump --uri=${SOURCE_CLUSTER}/${DATABASE} "${EXCLUDE_COLLECTION[@]/#/--excludeCollection=}" --archive | mongorestore --uri=${DESTINATION_CLUSTER} --archive --drop
 
 status_code="${PIPESTATUS[0]}"
 
