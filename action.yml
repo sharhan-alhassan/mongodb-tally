@@ -27,5 +27,5 @@ runs:
     - ${{ inputs.database }}
     - ${{ inputs.exclude }}
 branding:
-  icon: 'server'
-  color: 'gray-dark'
+  icon: 'database'
+  color: 'purple'
