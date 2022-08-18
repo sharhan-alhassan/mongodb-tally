@@ -32,8 +32,8 @@ Using github secrets for the database username, password, and host
   id: rollback-1
   uses: sharhan-alhassan/mongodb-tally@main
   with:
-    source:   "mongodb+srv://${{ secrets.SOURCE_DB_USERNAME }}:${{ secrets.SOURCE_DB_PASSWORD }}@${{ secrets.SOURCE_DB_HOST }}"
-    destination:   "mongodb+srv://${{ secrets.DESTINATION_DB_USERNAME }}:${{ secrets.DESTINATION_DB_PASSWORD }}@${{ secrets.DESTINATION_DB_HOST }}"
+    source: mongodb+srv://${{ secrets.SOURCE_DB_USERNAME }}:${{ secrets.SOURCE_DB_PASSWORD }}@${{ secrets.SOURCE_DB_HOST }}
+    destination: mongodb+srv://${{ secrets.DESTINATION_DB_USERNAME }}:${{ secrets.DESTINATION_DB_PASSWORD }}@${{ secrets.DESTINATION_DB_HOST }}
     database: sample_analytics
     exclude: accounts customers
 ```
@@ -45,8 +45,8 @@ Using github secrets to store the entire connection URI
   id: rollback-1
   uses: sharhan-alhassan/mongodb-tally@main
   with:
-    source: "${{ secrets.SOURCE_CONNECTION_URI }}"
-    destination: "${{ secrets.SOURCE_CONNECTION_URI }}"
+    source: ${{ secrets.SOURCE_CONNECTION_URI }}
+    destination: ${{ secrets.SOURCE_CONNECTION_URI }}
     database: sample_analytics
     exclude: accounts customers
 ```
