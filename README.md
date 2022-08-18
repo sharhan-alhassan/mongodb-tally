@@ -43,7 +43,7 @@ Using github secrets to store the entire connection URI
   uses: sharhan-alhassan/mongodb-tally@v0.1.0
   with:
     source: ${{ secrets.SOURCE_CONNECTION_URI }}
-    destination: ${{ secrets.SOURCE_CONNECTION_URI }}
+    destination: ${{ secrets.DESTINATION_CONNECTION_URI }}
     database: sample_analytics
     exclude: accounts customers
 ```
