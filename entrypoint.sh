@@ -1,10 +1,22 @@
-#!/bin/sh 
+#!/bin/bash 
+
 SOURCE_CLUSTER=$1
 DESTINATION_CLUSTER=$2
 DATABASE=$3
-EXCLUDE_COLLECTION=$4
-TIME=$(date)
 
-mongodump --uri=${SOURCE_CLUSTER}/${DATABASE} --excludeCollection=${EXCLUDE_COLLECTION} --archive | mongorestore --uri=${DESTINATION_CLUSTER} --archive
+read -ra EXCLUDE_COLLECTION <<< "$4"
+
+mongodump --uri=${SOURCE_CLUSTER}/${DATABASE} "${EXCLUDE_COLLECTION[@]/#/--excludeCollection=}" --archive | mongorestore --uri=${DESTINATION_CLUSTER} --archive
+
+status_code="${PIPESTATUS[0]}"
+
+if [ $status_code -ne 0 ];
+then
+  echo "Failed!...Error Code: ${status_code}"
+  echo "Refer to Logs"
+  exit
+else
+  echo "Success!"
+fi
 
 echo "::set-output name=time::$TIME"

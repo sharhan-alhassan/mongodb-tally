@@ -3,10 +3,10 @@ name: 'Mongo Tally'
 description: 'Sync databases and collections across clusters'
 author: 'Sharhan Alhassan'
 inputs:
-  source_uri: 
+  source: 
     description: 'Source'
     required: true
-  destination_uri: 
+  destination: 
     description: 'Destination'
     required: true
   database:  
@@ -22,7 +22,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.source_uri }}
-    - ${{ inputs.destination_uri }}
-    - ${{ inputs.database_uri }}
-    - ${{ inputs.exclude_uri }}
+    - ${{ inputs.source }}
+    - ${{ inputs.destination }}
+    - ${{ inputs.database }}
+    - ${{ inputs.exclude }}
