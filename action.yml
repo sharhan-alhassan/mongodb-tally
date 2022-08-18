@@ -26,3 +26,6 @@ runs:
     - ${{ inputs.destination }}
     - ${{ inputs.database }}
     - ${{ inputs.exclude }}
+branding:
+  icon: 'server'
+  color: 'gray-dark'
